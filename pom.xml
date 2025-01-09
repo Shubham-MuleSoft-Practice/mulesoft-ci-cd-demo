@@ -21,18 +21,28 @@
 				<version>4.2.0</version>
 				<extensions>true</extensions>
 				<configuration>
-					<cloudHubDeployment>
-						<uri>https://anypoint.mulesoft.com</uri>
-						<muleVersion>4.3.0</muleVersion>
-						<applicationName>mulesoft-cicd-sample2</applicationName>
-						<environment>Sandbox</environment>
-						<workerType>MICRO</workerType>
-						<connectedAppClientId>0a2e2d765f894691aa7cd5eecb03bb80</connectedAppClientId>
-						<connectedAppClientSecret>280bCD709ffF435CA46Bbd0607209862</connectedAppClientSecret>
-						<connectedAppGrantType>client_credentials</connectedAppGrantType>
-						<objectStoreV2>true</objectStoreV2>
-						<region>us-east-2</region>
-					</cloudHubDeployment>
+				   <cloudhub2Deployment>
+					<uri>https://anypoint.mulesoft.com</uri>
+					<provider>MC</provider>
+					<environment>${environment}</environment>
+					<target>${targetName}</target>
+					<muleVersion>${muleVersion}</muleVersion>
+					<username>${user}</username>
+					<password>${pass}</password>
+					<applicationName>${appName}</applicationName>
+					<replicas>1</replicas>
+					<objectStoreV2>true</objectStoreV2>
+					<vCores>1</vCores>
+					<deploymentSettings>
+						<http>
+							<inbound>
+								<publicUrl>${publicURL}</publicUrl>
+								<forwardSslSession>true</forwardSslSession>
+								<lastMileSecurity>true</lastMileSecurity>
+							</inbound>
+						</http>
+					</deploymentSettings>
+				</cloudhub2Deployment>
 				</configuration>
 			</plugin>
 		</plugins>
