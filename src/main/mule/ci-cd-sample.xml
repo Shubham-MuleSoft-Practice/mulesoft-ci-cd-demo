@@ -10,6 +10,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 	</http:listener-config>
 	<flow name="ci-cd-sampleFlow" doc:id="349c47a5-2c86-469e-866f-c5105057d99b" >
 		<http:listener doc:name="Listener" doc:id="25235a16-30d7-43c8-b1ab-6c85c76dc4ce" config-ref="HTTP_Listener_config" path="/hello"/>
+		<logger level="INFO" doc:name="Logger" doc:id="67531005-c61a-4e3c-bb66-e6a0dc7ee63c" message="initial start flow "/>
 		<ee:transform doc:name="Transform Message" doc:id="b97adc2d-e3a5-455d-a196-38834a39ee09" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
