@@ -3,45 +3,42 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.mycompany</groupId>
-	<artifactId>mulesoft-cicd-sample2</artifactId>
+	<artifactId>mulesoft-cicd-sample-1</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>mule-application</packaging>
 	<name>mulesoft-cicd-sample-1</name>
+	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<app.runtime>4.2.2</app.runtime>
-		<mule.maven.plugin.version>3.4.0</mule.maven.plugin.version>
+		<app.runtime>4.6.6</app.runtime>
+		<mule.maven.plugin.version>4.2.0</mule.maven.plugin.version>
 	</properties>
 	<build>
 		<plugins>
+		    <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>3.2.0</version>
+			</plugin>
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
-				<version>4.2.0</version>
+				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
 				   <cloudhub2Deployment>
 					<uri>https://anypoint.mulesoft.com</uri>
 					<provider>MC</provider>
-					<environment>${environment}</environment>
-					<target>${targetName}</target>
-					<muleVersion>${muleVersion}</muleVersion>
-					<username>${user}</username>
-					<password>${pass}</password>
-					<applicationName>${appName}</applicationName>
+					<environment>Sandbox</environment>
+					<target>Cloudhub-US-East-2</target>
+					<muleVersion>4.6.0</muleVersion>
+					<username>Shubh_123</username>
+					<password>Shubh@123</password>
+					<applicationName>mulesoft-cicd-sample-1</applicationName>
 					<replicas>1</replicas>
+					<vCores>0.1</vCores>
 					<objectStoreV2>true</objectStoreV2>
-					<vCores>1</vCores>
-					<deploymentSettings>
-						<http>
-							<inbound>
-								<publicUrl>${publicURL}</publicUrl>
-								<forwardSslSession>true</forwardSslSession>
-								<lastMileSecurity>true</lastMileSecurity>
-							</inbound>
-						</http>
-					</deploymentSettings>
 				</cloudhub2Deployment>
 				</configuration>
 			</plugin>
