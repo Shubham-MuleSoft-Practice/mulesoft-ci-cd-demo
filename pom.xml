@@ -38,7 +38,7 @@
 					<applicationName>mulesoft-cicd-sample-1</applicationName>
 					<replicas>1</replicas>
 					<vCores>0.1</vCores>
-					<objectStoreV2>true</objectStoreV2>
+					<!-- <objectStoreV2>true</objectStoreV2> -->
 				</cloudhub2Deployment>
 				</configuration>
 			</plugin>
